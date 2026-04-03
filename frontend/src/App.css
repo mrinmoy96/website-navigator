@@ -1,0 +1,103 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── Header ─────────────────────────────────────── */
+.app-header {
+  height: 54px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 1.5rem;
+  border-bottom: 1px solid var(--c-border);
+  background: rgba(8, 8, 16, 0.92);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 300;
+  flex-shrink: 0;
+}
+
+.app-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.12em;
+  color: var(--c-text);
+  padding: 0;
+  line-height: 1;
+}
+.logo-mark { color: var(--c-accent); font-size: 0.65rem; }
+
+.app-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  overflow: hidden;
+  font-size: 0.7rem;
+}
+
+.meta-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--c-bg-3);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: 3px 10px;
+  max-width: 240px;
+  overflow: hidden;
+}
+.meta-icon { color: var(--c-accent); font-size: 0.6rem; }
+.meta-file { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--c-text-2); }
+
+.meta-sep   { color: var(--c-text-3); }
+.meta-count { color: var(--c-accent); font-size: 0.7rem; white-space: nowrap; }
+
+.btn-outline {
+  margin-left: auto;
+  background: none;
+  border: 1px solid var(--c-border-hi);
+  color: var(--c-text-2);
+  padding: 4px 14px;
+  border-radius: var(--radius);
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+.btn-outline:hover {
+  border-color: var(--c-accent);
+  color: var(--c-accent);
+  background: var(--c-accent-lo);
+}
+
+/* ── Main ───────────────────────────────────────── */
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.25rem;
+  width: 100%;
+}
+
+/* ── Footer ─────────────────────────────────────── */
+.app-footer {
+  border-top: 1px solid var(--c-border);
+  padding: 0.7rem 1.5rem;
+  text-align: center;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  color: var(--c-text-3);
+  text-transform: uppercase;
+}

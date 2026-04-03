@@ -1,0 +1,85 @@
+/*
+ ╔══════════════════════════════════════════════╗
+ ║  WebNav · Global Design System               ║
+ ║  Aesthetic: Dark Brutalist / Terminal Amber  ║
+ ║  Fonts: Archivo Black (display) + Fira Code  ║
+ ╚══════════════════════════════════════════════╝
+*/
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fira+Code:wght@300;400;500;600&display=swap");
+
+/* ── Design Tokens ──────────────────────────────────────── */
+:root {
+  /* Surfaces */
+  --c-bg:        #080810;
+  --c-bg-1:      #0e0e18;
+  --c-bg-2:      #14141f;
+  --c-bg-3:      #1c1c28;
+  --c-bg-4:      #232333;
+
+  /* Borders */
+  --c-border:    #252535;
+  --c-border-hi: #363650;
+
+  /* Accent – amber / gold */
+  --c-accent:    #f0b429;
+  --c-accent-2:  #d49b1a;
+  --c-accent-lo: rgba(240, 180, 41, 0.10);
+  --c-accent-lo2:rgba(240, 180, 41, 0.05);
+
+  /* Text */
+  --c-text:      #ededf5;
+  --c-text-2:    #8080a0;
+  --c-text-3:    #404055;
+
+  /* Semantic */
+  --c-danger:    #f06060;
+  --c-success:   #50d890;
+
+  /* Shape */
+  --radius:      2px;
+  --radius-md:   5px;
+  --radius-lg:   8px;
+
+  /* Type */
+  --font-display: "Archivo Black", sans-serif;
+  --font-code:    "Fira Code", monospace;
+}
+
+/* ── Reset ───────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { height: 100%; }
+
+body {
+  min-height: 100%;
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--font-code);
+  font-size: 13px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  /* Subtle grid texture */
+  background-image:
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+#root { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ── Scrollbars ──────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--c-bg); }
+::-webkit-scrollbar-thumb { background: var(--c-border-hi); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--c-accent-2); }
+
+/* ── Accessibility ───────────────────────────────────────── */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 3px;
+}

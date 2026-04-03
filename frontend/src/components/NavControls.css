@@ -1,0 +1,139 @@
+.nav-controls {
+  border-top: 1px solid var(--c-border);
+  background: var(--c-bg-2);
+  flex-shrink: 0;
+}
+
+/* ── Progress bar ────────────────────────────────── */
+.nav-progress {
+  height: 3px;
+  background: var(--c-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-progress-fill {
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  background: var(--c-accent);
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Row ─────────────────────────────────────────── */
+.nav-row {
+  display: flex;
+  align-items: stretch;
+  height: 52px;
+}
+
+/* ── Buttons ─────────────────────────────────────── */
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1.4rem;
+  background: transparent;
+  border: none;
+  color: var(--c-text-2);
+  font-family: var(--font-code);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+
+.nav-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.nav-btn--prev { border-right: 1px solid var(--c-border); }
+.nav-btn--next { border-left:  1px solid var(--c-border); }
+
+.nav-btn:hover:not(:disabled) {
+  color: var(--c-accent);
+  background: var(--c-accent-lo);
+}
+
+.nav-btn:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.nav-btn:active:not(:disabled) { transform: scale(0.97); }
+
+/* ── Counter ─────────────────────────────────────── */
+.nav-counter {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+}
+
+.nav-counter-btn {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 8px;
+  border-radius: var(--radius);
+  transition: background 0.15s;
+}
+
+.nav-counter-btn:hover { background: var(--c-bg-3); }
+
+.counter-cur {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--c-accent);
+  line-height: 1;
+}
+
+.counter-sep {
+  font-size: 0.7rem;
+  color: var(--c-text-3);
+}
+
+.counter-tot {
+  font-size: 0.82rem;
+  color: var(--c-text-2);
+  line-height: 1;
+}
+
+.counter-hint {
+  font-size: 0.6rem;
+  color: var(--c-text-3);
+  letter-spacing: 0.08em;
+}
+
+/* ── Jump input ──────────────────────────────────── */
+.nav-jump-input {
+  width: 64px;
+  background: var(--c-bg-3);
+  border: 1px solid var(--c-accent);
+  border-radius: var(--radius);
+  color: var(--c-accent);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 2px 4px;
+  outline: none;
+  /* Hide number spinners */
+  -moz-appearance: textfield;
+}
+.nav-jump-input::-webkit-outer-spin-button,
+.nav-jump-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+/* ── Responsive ──────────────────────────────────── */
+@media (max-width: 480px) {
+  .nav-btn span { display: none; }
+  .nav-btn      { padding: 0 1rem; }
+}
